@@ -1,0 +1,44 @@
+
+enum gender {
+  MALE
+  FEMALE
+}
+
+type User {
+  uid: Int!
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
+}
+
+input userInput {
+  uid: Int64!
+}
+
+input createUserInput {
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
+}
+
+input updateUserInput {
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
+}
+
+input deleteUserInput {
+  uid: Int64!
+}
