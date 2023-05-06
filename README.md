@@ -69,6 +69,7 @@ sqlc generate
 
 ### GraphQL
 - [gqlgen Github](https://github.com/99designs/gqlgen)
+#### 아래의 command로 .graphqls에 수정한 사항을 반영할 수 있다.
 ```sh
 go run github.com/99designs/gqlgen
 ```

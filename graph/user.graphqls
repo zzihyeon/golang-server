@@ -25,8 +25,6 @@ input createUserInput {
   phone: String!
   gender: gender!
   birth_date: Time!
-  created_at: Time!
-  updated_at: Time!
 }
 
 input updateUserInput {
@@ -35,10 +33,69 @@ input updateUserInput {
   phone: String!
   gender: gender!
   birth_date: Time!
-  created_at: Time!
-  updated_at: Time!
 }
 
 input deleteUserInput {
   uid: Int64!
+}
+
+type AdminUser implements UserInterface {
+  uid: Int!
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
+  level: Int! # 0: super, 1: edit, 3: view
+}
+
+type BizInfo {
+  biz_num: String!
+  biz_img: String!
+}
+
+type Stuff {
+  id: String!
+  name: String!
+  available: Int!
+  total: Int!
+}
+
+type SellerUser implements UserInterface {
+  uid: Int!
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
+  bizInfo: [BizInfo!]!
+  stuff: [Stuff!]!
+}
+
+type BuyerUser implements UserInterface {
+  uid: Int!
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
+  purchases:[Stuff!]!
+  shopping_carts:[Stuff!]!
+}
+
+interface UserInterface {
+  uid: Int!
+  email: String!
+  name: String!
+  phone: String!
+  gender: gender!
+  birth_date: Time!
+  created_at: Time!
+  updated_at: Time!
 }

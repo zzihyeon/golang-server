@@ -1,0 +1,23 @@
+interface StuffInterface {
+    name: String!
+    kind: String!
+    price: Int!
+}
+
+type Food implements StuffInterface {
+    name: String!
+    kind: String!
+    price: Int!
+    shelf_life: Time!
+    #...
+}
+
+type Furniture implements StuffInterface {
+    name: String!
+    kind: String!
+    price: Int!
+    description: String!
+    #...
+}
+
+union StuffResult = Food | Furniture
